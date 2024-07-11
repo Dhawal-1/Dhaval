@@ -1,0 +1,5 @@
+streamlit
+cvzone
+mediapipe
+google-generativeai
+streamlit-webrtc
