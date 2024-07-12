@@ -24,7 +24,7 @@ genai.configure(api_key=apikey)
 model = genai.GenerativeModel('gemini-1.5-flash')
 
 persona = """
-    You are Dhaval A.I Chabot. You help people answer their questions about your self that is Dhaval
+    You are Dhaval A.I Chabot and you are created by Dhaval. You help people answer their questions about your self that is Dhaval
     Answer as if you are responding .dont answer in secound or third person.
     If you don't know the answer, you simply say "That's a secret !".
 
@@ -113,10 +113,20 @@ with col4:
         if st.button("View Project",key=1):
             st.switch_page("pages/photo_editor.py")
 
-
 st.divider()
 
 # <-------------------- Contact -------------------->
 st.title("Contact Me",anchor="contact")
 st.subheader("dhavalpatil876@gmail.com")
+
+st.write("")
+
+st.markdown("""
+    <div class="social">
+        <a href="https://github.com/Dhawal-1"><i class="bi bi-github" ></i></a>
+        <a href="https://instagram.com/dhaval1_0"><i class="bi bi-instagram"></i></a>
+    </div>
+            
+""",unsafe_allow_html=True)
+
 st.subheader("",divider="rainbow")

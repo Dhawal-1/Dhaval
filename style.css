@@ -1,8 +1,6 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 
-html{
-    scroll-behavior: smooth;
-}
+
 
 .nav{
     display: flex;
@@ -35,3 +33,41 @@ html{
 
 }
 
+i{
+    font-size: 3rem;
+}
+
+.social{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+
+}
+
+@media (max-width: 768px) {
+    .nav {
+        gap: 1.5rem; 
+        padding: 0.5rem;
+    }
+    
+    .nav a {
+        font-size: 1rem; 
+        padding-top: 0.5rem; 
+    }
+}
+
+@media (max-width: 576px) {
+    .nav {
+        flex-direction: inherit; 
+        align-items: center; 
+    }
+    
+    .nav a {
+        font-size: 0.8rem; 
+    }
+
+    .bi::before{
+        size: 0.3rem;
+    }
+}
