@@ -30,6 +30,8 @@ persona = """
 
     Here is more info about Dhaval:
     Dhaval Patil is a youngest programeer and student. He is a Python developer.
+    Dhaval's dream is to become a successful Software developer.
+    Dhaval created many project in Python, you can preview some projects in the projects section.
     Dhaval lives in India.
     Dhaval's learn Computer Vision from Murtaza's Workshop - Robotics and AI YouTube Channel.
     He currently studying in 12th standard.
@@ -38,6 +40,8 @@ persona = """
     Dhaval is currently 17 years old.
 
     Dhaval's email adress : dhavalpatil876@gmail.com
+    Dhaval's GitHub : https://github.com/Dhawal-1
+    Dhaval's Instagram : https://instagram.com/dhaval1_0
 
 """
 
@@ -80,13 +84,14 @@ st.title("Dhaval's ChatBot",anchor="chatbot")
 
 question = st.text_input("Ask me anything",placeholder="Type your question here...")
 if st.button("Ask",help="Ask question to Dhaval's ChatBot",use_container_width=1):
-    try:
-        question = persona + "Here is the question" + question
-        response = model.generate_content(question)
-        response_dialog(response)
-    except:
-        st.toast("Please Wait Some Time... The A.I needs cooldown !",icon = '🥶')
-        time.sleep(3)
+    with st.spinner("Thinking..."):
+        try:
+            question = persona + "Here is the question" + question
+            response = model.generate_content(question)
+            response_dialog(response)
+        except:
+            st.toast("Please Wait Some Time... The A.I needs cooldown !",icon = '🥶')
+            time.sleep(3)
     
 
 st.divider()
@@ -94,22 +99,28 @@ st.divider()
 # <-------------------- Projects -------------------->
 
 st.title("Projects",anchor="projects")
-col2,col3,col4 = st.columns([2,2,2])
+col1,col2,col3,col4 = st.columns(4)
+
+with col1:
+    with st.container(border=True):
+        st.subheader("Style Transfer")
+        if st.button("View Project",key=2):
+            st.switch_page("pages/style_transfer.py") 
 
 with col2:
     with st.container(border=True):
-        st.header("Sticker Genrator")
+        st.subheader("Sticker Genrator")
         if st.button("View Project"):
             st.switch_page("pages/Sticker_Genrator.py")
 
 with col3:
     with st.container(border=True):
-        st.header("Blender Addons")
+        st.subheader("Blender Addons")
         st.link_button("Open Website","https://blendermarket.com/creators/flowcreations")
 
 with col4:
     with st.container(border=True):
-        st.header("Photo Editor")
+        st.subheader("Photo Editor")
         if st.button("View Project",key=1):
             st.switch_page("pages/photo_editor.py")
 
@@ -117,7 +128,6 @@ st.divider()
 
 # <-------------------- Contact -------------------->
 st.title("Contact Me",anchor="contact")
-st.subheader("dhavalpatil876@gmail.com")
 
 st.write("")
 
@@ -125,6 +135,7 @@ st.markdown("""
     <div class="social">
         <a href="https://github.com/Dhawal-1"><i class="bi bi-github" ></i></a>
         <a href="https://instagram.com/dhaval1_0"><i class="bi bi-instagram"></i></a>
+        <a href="mailto:dhavalpatil876@gmail.com"><i class="bi bi-envelope-at"></i></a>
     </div>
             
 """,unsafe_allow_html=True)

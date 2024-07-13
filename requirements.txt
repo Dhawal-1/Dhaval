@@ -1,4 +1,6 @@
 streamlit
-numpy
+cvzone
+mediapipe
 google-generativeai
-opencv-python-headless
+tensorflow
+tensorflow_hub
