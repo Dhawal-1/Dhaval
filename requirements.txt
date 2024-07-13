@@ -2,5 +2,5 @@ streamlit
 cvzone
 mediapipe
 google-generativeai
-tensorflow==2.11
+tensorflow==2.11.1
 tensorflow_hub
