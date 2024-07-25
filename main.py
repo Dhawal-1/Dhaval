@@ -141,3 +141,5 @@ st.markdown("""
 """,unsafe_allow_html=True)
 
 st.subheader("",divider="rainbow")
+st.markdown("""<p style="color: rgba(240, 248, 255, 0.5); text-align: center;">© Dhaval Patil</p>""",unsafe_allow_html=True)
+
